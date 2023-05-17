@@ -10,24 +10,30 @@ public class Guesses {
         this.usedLettersArray.add(letter);
     }
 
-    public String guess(char letter, char[] wordArray, char[] hiddenWord) {
-
+    public boolean guess(char letter, char[] wordArray, char[] hiddenWord) {
+        boolean result = false;
 
         for (int i=0; i<wordArray.length; i++) {
             if (wordArray[i]==letter) {
                 hiddenWord[i]=letter;
-                return "Correct!";
-            } else {
-                livesCounter--;
-                return "Incorrect! You've lost 1 life.";
+                result = true;
+
             }
-            } return "Used letters: " + usedLettersArray.size() + ". Remaining lives: "
-                + livesCounter + ". Word to guess: " + hiddenWord;
+            } return result;
+    }
+
+    public String correctGuess() {
+        return "Correct!";
+    }
+
+    public String incorrectGuess() {
+        livesCounter--;
+        return "Incorrect!";
 
     }
 
     public String nextTurn(char[] hiddenWord) {
-        return "Used letters: " + usedLettersArray.size() + ". Remaining lives: "
+        return "Used letters: " + usedLettersArray + ". Remaining lives: "
                 + livesCounter + ". Word to guess: " + hiddenWord;
 
     }

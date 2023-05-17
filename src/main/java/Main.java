@@ -6,6 +6,7 @@ public class Main {
         Word word = new Word();
         Interaction interaction = new Interaction();
         Guesses guess = new Guesses();
+
         String newWord = word.getWord();
         System.out.println(newWord);
         System.out.println("Your word is: " + word.hideWord());
@@ -19,7 +20,14 @@ public class Main {
 
         char guessedLetter = interaction.returnLetter();
         guess.addLetter(guessedLetter);
-        System.out.println(guess.guess(guessedLetter, newWordArray, hiddenWordArray));
+        boolean userGuess = guess.guess(guessedLetter, newWordArray, hiddenWordArray);
+
+        if (userGuess==true) {
+            System.out.println(guess.correctGuess());
+        } else {
+            System.out.println(guess.incorrectGuess());
+        }
+
         System.out.println(guess.nextTurn(hiddenWordArray));
 
 
