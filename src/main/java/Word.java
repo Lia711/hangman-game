@@ -14,7 +14,7 @@ public class Word {
             return hiddenWord;
         }
 
-        //char[] wordArray = newWord.toCharArray();
+        //
 
 
 

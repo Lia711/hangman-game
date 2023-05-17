@@ -1,18 +1,17 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Guesses {
+    int livesCounter = 8;
+    private ArrayList<Character> usedLettersArray = new ArrayList<>();
 
-    public String guess() {
-        /*
+    public void addLetter (char letter) {
+        this.usedLettersArray.add(letter);
+    }
 
-        int livesCounter = 8;
-        char[] guessedLetters = {};
+    public String guess(char letter, char[] wordArray, char[] hiddenWord) {
 
-        //increase array size
-        guessedLetters = Arrays.copyOf(guessedLetters, guessedLetters.length + 1);
-        //append guessed letter to last index of array
-        guessedLetters[guessedLetters.length - 1]=letter;
 
         for (int i=0; i<wordArray.length; i++) {
             if (wordArray[i]==letter) {
@@ -22,11 +21,17 @@ public class Guesses {
                 livesCounter--;
                 return "Incorrect! You've lost 1 life.";
             }
-            } return "Used letters: " + guessedLetters + ". Remaining lives: "
+            } return "Used letters: " + usedLettersArray.size() + ". Remaining lives: "
+                + livesCounter + ". Word to guess: " + hiddenWord;
+
+    }
+
+    public String nextTurn(char[] hiddenWord) {
+        return "Used letters: " + usedLettersArray.size() + ". Remaining lives: "
                 + livesCounter + ". Word to guess: " + hiddenWord;
 
     }
 
 
-}*/ return "";}
+
 }
