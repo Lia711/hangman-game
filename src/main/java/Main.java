@@ -15,6 +15,7 @@ public class Main {
         char[] newWordArray = newWord.toCharArray();
         char[] hiddenWordArray = hiddenWord.toCharArray();
 
+
         System.out.println("Enter a letter: ");
         interaction.readInput();
 
@@ -28,7 +29,9 @@ public class Main {
             System.out.println(guess.incorrectGuess());
         }
 
-        System.out.println(guess.nextTurn(hiddenWordArray));
+        System.out.println(guess.nextTurn());
+        System.out.println(hiddenWordArray);
+
 
 
 

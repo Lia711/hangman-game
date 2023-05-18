@@ -15,7 +15,7 @@ public class Guesses {
 
         for (int i=0; i<wordArray.length; i++) {
             if (wordArray[i]==letter) {
-                hiddenWord[i]=letter;
+                hiddenWord[i*2]=letter;
                 result = true;
 
             }
@@ -32,11 +32,12 @@ public class Guesses {
 
     }
 
-    public String nextTurn(char[] hiddenWord) {
+    public String nextTurn() {
         return "Used letters: " + usedLettersArray + ". Remaining lives: "
-                + livesCounter + ". Word to guess: " + hiddenWord;
+                + livesCounter + ".";
 
     }
+
 
 
 
