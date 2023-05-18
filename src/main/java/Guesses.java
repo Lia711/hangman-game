@@ -6,6 +6,10 @@ public class Guesses {
     int livesCounter = 8;
     private ArrayList<Character> usedLettersArray = new ArrayList<>();
 
+    public int displayLives() {
+        return livesCounter;
+    }
+
     public void addLetter (char letter) {
         this.usedLettersArray.add(letter);
     }
@@ -37,8 +41,5 @@ public class Guesses {
                 + livesCounter + ".";
 
     }
-
-
-
 
 }
