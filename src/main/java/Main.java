@@ -8,6 +8,7 @@ public class Main {
         Word word = new Word();
         Interaction interaction = new Interaction();
         Guesses guess = new Guesses();
+        Graphics graphics = new Graphics();
 
         System.out.println("Press 1 to start game.");
         int begin = interaction.readNumber();
@@ -42,6 +43,7 @@ public class Main {
                 } else {
                     System.out.println(guess.incorrectGuess());
                     lives--;
+                    System.out.println(graphics.incorrectGuess(lives));
                 }
 
                 System.out.println(guess.nextTurn());
