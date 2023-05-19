@@ -7,11 +7,14 @@ public class Guesses {
     private ArrayList<Character> usedLettersArray = new ArrayList<>();
 
     public int displayLives() {
+
         return livesCounter;
     }
 
     public void addLetter (char letter) {
-        this.usedLettersArray.add(letter);
+        if (!usedLettersArray.contains(letter)) {
+            this.usedLettersArray.add(letter);
+        }
     }
 
     public boolean guess(char letter, char[] wordArray, char[] hiddenWord) {
@@ -21,7 +24,6 @@ public class Guesses {
             if (wordArray[i]==letter) {
                 hiddenWord[i*2]=letter;
                 result = true;
-
             }
             } return result;
     }
