@@ -9,15 +9,24 @@ public class Main {
 
         while (playAgain) {
             boolean game = false;
+            int difficulty=0;
             Word word = new Word();
             Interaction interaction = new Interaction();
             Guesses guess = new Guesses();
             Graphics graphics = new Graphics();
 
-            System.out.println("Press 1 for a random word.");
+
+            System.out.println("Select difficulty: Press 1 for easy mode. Press 2 for normal mode. Press 3 for hard mode.");
             int begin = interaction.readNumber();
 
             if (begin == 1) {
+                difficulty=1;
+                game = true;
+            } else if(begin==2) {
+                difficulty=2;
+                game = true;
+            } else if (begin==3) {
+                difficulty=3;
                 game = true;
             }
 
@@ -31,9 +40,16 @@ public class Main {
                 char[] newWordArray = newWord.toCharArray();
                 char[] hiddenWordArray = hiddenWord.toCharArray();
                 char[] wordToCheckArray = newWord.replace("", " ").trim().toCharArray();
+                int lives=0;
+                if (difficulty==1) {
+                    lives = 8;
+                } else if (difficulty==2) {
+                    lives=5;
+                } else if (difficulty==3) {
+                    lives = 3;
+                }
 
-                int lives = guess.displayLives();
-                System.out.println(lives);
+                System.out.println("Remaining lives: " + lives + ".");
 
                 while ((lives > 0) && !(Arrays.equals(hiddenWordArray, wordToCheckArray))) {
                     System.out.println("Enter a letter: ");
@@ -50,7 +66,7 @@ public class Main {
                         lives--;
                         System.out.println(graphics.incorrectGuess(lives));
                     }
-
+                    System.out.println("Remaining lives: " + lives + ".");
                     System.out.println(guess.nextTurn());
                     System.out.println(hiddenWordArray);
                 }

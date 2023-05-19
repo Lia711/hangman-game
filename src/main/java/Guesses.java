@@ -39,8 +39,7 @@ public class Guesses {
     }
 
     public String nextTurn() {
-        return "Used letters: " + usedLettersArray + ". Remaining lives: "
-                + livesCounter + ".";
+        return "Used letters: " + usedLettersArray + ".";
 
     }
 
