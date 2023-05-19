@@ -75,7 +75,5 @@ public class Graphics {
                     "_________";
         }
         return result;
-
     }
-
 }
