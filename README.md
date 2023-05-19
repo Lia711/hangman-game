@@ -1,4 +1,4 @@
-# hangman-game
+# Hangman Game
 
 Features:
 - Traditional game of hangman made in Java
@@ -17,6 +17,3 @@ Files- 5 Java classes:
 - "Interaction" deals with the player-console interaction and the letters and numbers they input, controlling the flow of the game
 - "Guesses" contains logic for whenever the player guessses a letter
 - "Graphics" contains the drawings of the hangman for each amount of lives left
-
-Known Issues (Work In Progress) 
-- No error handling for when user inputs a letter instead of a number when prompted with a choice
