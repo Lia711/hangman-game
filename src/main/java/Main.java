@@ -57,7 +57,7 @@ public class Main {
                     guess.addLetter(guessedLetter);
                     boolean userGuess = guess.guess(guessedLetter, newWordArray, hiddenWordArray);
 
-                    if (userGuess == true) {
+                    if (userGuess) {
                         System.out.println(guess.correctGuess());
                     } else {
                         System.out.println(guess.incorrectGuess());

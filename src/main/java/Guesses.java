@@ -1,9 +1,6 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Guesses {
-    int livesCounter = 8;
     private ArrayList<Character> usedLettersArray = new ArrayList<>();
     public void addLetter (char letter) {
         if (!usedLettersArray.contains(letter)) {
